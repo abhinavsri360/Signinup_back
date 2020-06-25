@@ -30,4 +30,20 @@ userRouter.route('/')
       .catch((err) => next(err))
   })
 
+userRouter.route('/:email')
+  .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200) })
+  .get(cors.corsWithOptions, (req, res, next) => {
+    Users.findOne({ email: req.params.email })
+      .then((user) => {
+        if (user.password === req.body.password) {
+          res.statusCode = 200
+          res.setHeader('Content-type', 'application/json')
+          res.json(user)
+        } else {
+          next(err)
+        }
+      }, (err) => next(err))
+      .catch((err) => next(err))
+  })
+
 module.exports = userRouter
