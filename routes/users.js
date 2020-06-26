@@ -19,6 +19,9 @@ userRouter.route('/')
       }, (err) => next(err))
       .catch((err) => next(err))
   })
+
+userRouter.route('/signup')
+  .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200) })
   .post(cors.corsWithOptions, (req, res, next) => {
     Users.create(req.body)
       .then((user) => {
@@ -30,18 +33,16 @@ userRouter.route('/')
       .catch((err) => next(err))
   })
 
-userRouter.route('/:email')
+userRouter.route('/login')
   .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200) })
   .get(cors.corsWithOptions, (req, res, next) => {
-    Users.findOne({ email: req.params.email })
+    Users.findOne({ email: req.body.email })
       .then((user) => {
         if (user.password === req.body.password) {
           res.statusCode = 200
           res.setHeader('Content-type', 'application/json')
           res.json(user)
-        } else {
-          next(err)
-        }
+        } else { next(err) }
       }, (err) => next(err))
       .catch((err) => next(err))
   })
