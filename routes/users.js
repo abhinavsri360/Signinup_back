@@ -33,9 +33,9 @@ userRouter.route('/signup')
       .catch((err) => next(err))
   })
 
-userRouter.route('/login')
+userRouter.route('/signin')
   .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200) })
-  .get(cors.corsWithOptions, (req, res, next) => {
+  .post(cors.corsWithOptions, (req, res, next) => {
     Users.findOne({ email: req.body.email })
       .then((user) => {
         if (user.password === req.body.password) {
