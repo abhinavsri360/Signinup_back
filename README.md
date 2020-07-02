@@ -29,3 +29,9 @@ Test using postman or with the Frontend flow or maybe with your configured front
 - GET request: http://localhost:5000/user
 - REGISTER USER: http://localhost:5000/user/register
 - Login USER: http://localhost:5000/user/login
+
+
+
+#### Made with :heart: by <a href="https://github.com/abhinavsri360">abhinavsri360</a>
+
+[![forthebadge](https://forthebadge.com/images/badges/no-ragrets.svg)](https://github.com/abhinavsri360)
