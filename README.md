@@ -12,6 +12,14 @@ Thank you so much for visiting this repository :heart: Liked this? :star: Want t
 Contribution to this can be a huge step to Open-Source and a great help to many developers out here :smile:
 
 # Get project running
+
+Make sure your mongodb server is up and running. If not install Mongodb, create a directory named _"Mongodb"_ anywhere cd into that make another directory named _"data"_. Now in the _"Mongodb"_ directory open the terminal and run the command given below. Then you're good to go. Keep this running and advance to the instructions further.
+```yaml
+mongod --dbpath=data --bind_ip 127.0.0.1
+```
+
+_Fork_ :fork_and_knife: and _Clone_ the project further run the commands given below in the command terminal inside the project directory.
+
 ```yaml
 npm install
 npm start
