@@ -18,6 +18,6 @@ npm start
 ```
 
 Test using postman or with the Frontend flow or maybe with your configured frontend.
-GET request: http://localhost:5000/user
-REGISTER USER: http://localhost:5000/user/register
-Login USER: http://localhost:5000/user/login
+- GET request: http://localhost:5000/user
+- REGISTER USER: http://localhost:5000/user/register
+- Login USER: http://localhost:5000/user/login
