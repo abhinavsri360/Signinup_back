@@ -50,11 +50,13 @@ router.route('/login')
 
 router.route('/logout')
   .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200) })
-  .get(cors.cors, passport.authenticate('local'), (req, res, next) => {
+  .post(cors.corsWithOptions, passport.authenticate('local'), (req, res, next) => {
     if (req.session) {
       req.session.destroy()
       res.clearCookie('session-id')
-      res.redirect('/')
+      res.statusCode = 200
+      res.setHeader('Content-type', 'application/json')
+      res.json({ success: true, status: 'You are successfully logged out!' })
     } else {
       var err = new Error('You are not logged in!')
       err.status = 403
