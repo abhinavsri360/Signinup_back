@@ -1,6 +1,6 @@
 const cors = require('cors')
 
-const whitelist = ['http://localhost:3000']
+const whitelist = ['http://localhost:3000', 'https://signupin.netlify.app']
 var corsOptionsDelegate = (req, callback) => {
   var corsOptions
   console.log(req.header('Origin'))
